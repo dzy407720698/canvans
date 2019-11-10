@@ -22,14 +22,14 @@
 
     var canvas = document.querySelector('#myCanvas')
 
-	canvas.width = window.innerWidth * 0.8
-	canvas.height = window.innerHeight * 0.8
+	myCanvas.width = window.innerWidth * 0.8
+	myCanvas.height = window.innerHeight * 0.8
 	var ctx = canvas.getContext ("2d");
-	var pen = "on"
+	var pen = true
 	ctx.fillStyle = "red";
 	var color = document.querySelector('#picker')
 	canvas.addEventListener('mousemove', function (e) {
-	    if (pen == "on") {
+	    if (pen) {
 		    ctx.beginPath();
 		    ctx.arc(e.x, e.y, 10, 0, 2 * Math.PI);   
 		    ctx.fill()
@@ -59,11 +59,11 @@
 	            break;
 
 	        case "ArrowUp":
-	            pen = "lifted"
+	            pen = false
 	            break;
 
 	        case "ArrowDown":
-	            pen = "on"
+	            pen = true
 	            break;
 		}
 	})
